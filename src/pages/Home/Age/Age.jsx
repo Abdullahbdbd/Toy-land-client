@@ -3,7 +3,7 @@ import React from 'react';
 const Age = () => {
     return (
         <div>
-            <h1 className='my-10 text-5xl font-bold text-center text-sky-700'>Shop By Age</h1>
+            <h1 className='mt-10 mb-20 text-5xl font-bold text-center text-sky-700'>Shop By Age</h1>
             <div className='flex justify-around mx-20 space-x-4'>
             <div className="card w-72 bg-blue-300 shadow-xl">
                 <figure className="px-5 pt-5">
@@ -34,7 +34,7 @@ const Age = () => {
 
             <div className="card w-72 bg-blue-600 shadow-xl">
                 <figure className="px-5 pt-5">
-                    <img src="https://st2.depositphotos.com/1037987/10275/i/950/depositphotos_102753260-stock-photo-brother-and-sister-sitting-in.jpg" alt="Shoes" className="rounded-xl" />
+                    <img src="https://t4.ftcdn.net/jpg/01/54/75/75/360_F_154757548_y3InrEx22kncp0w1V0MrQvedh9MJLvqA.jpg" alt="Shoes" className="rounded-xl" />
                 </figure>
                 <div className="card-body items-center text-center">
                     <h2 className="card-title text-4xl font-bold">8-10 years</h2>
@@ -43,7 +43,7 @@ const Age = () => {
 
             <div className="card w-72 bg-blue-700 shadow-xl">
                 <figure className="px-5 pt-5">
-                    <img src="https://t4.ftcdn.net/jpg/01/54/75/75/360_F_154757548_y3InrEx22kncp0w1V0MrQvedh9MJLvqA.jpg" alt="Shoes" className="rounded-xl" />
+                    <img src=" https://st2.depositphotos.com/1037987/10275/i/950/depositphotos_102753260-stock-photo-brother-and-sister-sitting-in.jpg" alt="Shoes" className="rounded-xl" />
                 </figure>
                 <div className="card-body items-center text-center">
                     <h2 className="card-title text-4xl font-bold">10+ years</h2>
