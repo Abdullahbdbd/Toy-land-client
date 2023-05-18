@@ -15,7 +15,7 @@ const Categoric = () => {
                 </TabList>
                 <hr />
                 <TabPanel>
-                   <Toys></Toys>
+                  
                 </TabPanel>
                 <TabPanel>
                     <h2>Any content 2</h2>
