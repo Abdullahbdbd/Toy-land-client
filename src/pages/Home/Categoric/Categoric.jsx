@@ -7,7 +7,7 @@ import Toys from '../Toys/Toys';
 const Categoric = () => {
     return (
         <div className='text-center max-w-screen-xl max-h-screen mx-auto rounded-lg my-60'>
-            {/* <Tabs className="text-4xl font-bold">
+            <Tabs className="text-4xl font-bold">
                 <TabList className='space-x-16 mb-10'>
                     <Tab>Science kits</Tab>
                     <Tab>Math learning toys</Tab>
@@ -23,7 +23,7 @@ const Categoric = () => {
                 <TabPanel>
                     <h2>Any content 3</h2>
                 </TabPanel>
-            </Tabs> */}
+            </Tabs>
         </div>
     );
 };
