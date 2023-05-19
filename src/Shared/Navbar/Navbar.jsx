@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const navItems = <>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/alltoys">All Toys</Link></li>
-        <li><Link to="/blog">Blog</Link></li>
+        <li><Link className='text-xl font-semibold' to="/">Home</Link></li>
+        <li><Link className='text-xl font-semibold' to="/allToys">All Toys</Link></li>
+        <li><Link className='text-xl font-semibold' to="/blog">Blog</Link></li>
     </>
     return (
         <div className="navbar bg-blue-500 h-24">
@@ -29,7 +29,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end mr-5">
-                <button className="btn btn-outline font-bold">Log in</button>
+                <Link to='/login'><button className="btn btn-outline font-bold">Log in</button></Link>
             </div>
         </div>
     );
