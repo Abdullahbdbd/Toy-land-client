@@ -15,7 +15,7 @@ const Navbar = () => {
 
     const navItems = <>
         <li><Link className='text-xl font-semibold' to="/">Home</Link></li>
-        <li><Link className='text-xl font-semibold' to="/allToys">All Toys</Link></li>
+        <li><Link className='text-xl font-semibold' to="/allToy">All Toys</Link></li>
         <li><Link className='text-xl font-semibold' to="/blog">Blog</Link></li>
     </>
     return (

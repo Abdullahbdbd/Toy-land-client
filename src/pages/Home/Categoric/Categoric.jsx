@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import ScienceToy from '../Toys/ScienceToy/ScienceToy';
-import Toys from '../Toys/Toys';
 
 const Categoric = () => {
 
