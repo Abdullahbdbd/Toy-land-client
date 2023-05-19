@@ -11,12 +11,12 @@ const Toys = () => {
     },[])
     return (
         <div>
-          { 
+          {/* { 
           toys.map(toy => <ScienceToy
           key={toy._id}
           toy={toy}
           ></ScienceToy>)
-          }
+          } */}
         </div>
     );
 };

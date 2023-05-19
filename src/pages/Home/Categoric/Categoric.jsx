@@ -1,29 +1,64 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import ScienceToy from '../Toys/ScienceToy/ScienceToy';
 import Toys from '../Toys/Toys';
 
 const Categoric = () => {
+
+    const [toys, setToys] = useState([]);
+    const [activeTab, setActiveTab] = useState("science");
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/allToys/${activeTab}`)
+            .then(res => res.json())
+            .then(result => {
+                setToys(result);
+            })
+    }, [activeTab])
+
+    // const result = toys.filter(toy=> toy.section === activeTab);
+    // setToys(result)
+
+    const handleTabClick = (tabName) => {
+        setActiveTab(tabName);
+    }
+
+
     return (
         <div className='text-center max-w-screen-xl max-h-screen mx-auto rounded-lg my-60'>
-            <Tabs className="text-4xl font-bold">
-                <TabList className='space-x-16 mb-10'>
-                    <Tab>Science kits</Tab>
-                    <Tab>Math learning toys</Tab>
-                    <Tab>Engineering tools</Tab>
-                </TabList>
-                <hr />
-                <TabPanel>
-                  
-                </TabPanel>
-                <TabPanel>
-                    <h2>Any content 2</h2>
-                </TabPanel>
-                <TabPanel>
-                    <h2>Any content 3</h2>
-                </TabPanel>
-            </Tabs>
+            <div className='space-x-10 mb-20'>
+                <div
+                    onClick={() => handleTabClick("science")}
+                    className={`tab tab2 science text-3xl font-semibold ${activeTab == "science" ? "text-blue-500 btn btn-outline" : ""
+                        }`}
+                >Science kits</div>
+
+
+                <div
+                    onClick={() => handleTabClick("math learning")}
+                    className={`tab tab2 math learning text-3xl font-semibold ${activeTab == "math learning" ? "text-blue-500 btn btn-outline" : ""
+                        }`}
+                >Math learning toys</div>
+
+
+                <div
+                    onClick={() => handleTabClick("engineering")}
+                    className={`tab tab2 engineering text-3xl font-semibold ${activeTab == "engineering" ? "text-blue-500 btn btn-outline" : ""
+                        }`}
+                >Engineering tools</div>
+
+            </div>
+
+            <div className='grid grid-cols-2 gap-5'>
+                {
+                    toys.map(toy => <ScienceToy
+                        key={toy._id}
+                        toy={toy}
+                    ></ScienceToy>)
+                }
+
+            </div>
         </div>
     );
 };
