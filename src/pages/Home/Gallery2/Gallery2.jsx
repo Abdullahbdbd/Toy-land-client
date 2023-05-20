@@ -19,7 +19,7 @@ const Gallery2 = () => {
                                 <div className="badge badge-secondary">NEW</div>
                             </h2>
                             <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end mt-10">
+                            <div className="card-actions justify-end mt-5">
                             <button className="btn btn-active">Buy Now</button>
                             </div>
                         </div>
@@ -65,7 +65,7 @@ const Gallery2 = () => {
                                 <div className="badge badge-secondary">NEW</div>
                             </h2>
                             <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end mt-10">
+                            <div className="card-actions justify-end mt-5">
                             <button className="btn btn-active">Buy Now</button>
                             </div>
                         </div>

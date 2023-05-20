@@ -7,6 +7,7 @@ import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import AllToy from "../pages/AllToy/AllToy/AllToy";
 import Details from "../Shared/Details/Details";
+import PrivateRoute from "../provider/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
             {
 
                 path: '/details/:id',
-                element: <Details></Details>,
+                element: <PrivateRoute><Details></Details></PrivateRoute>,
                 loader: ({params})=> fetch(`http://localhost:5000/allToy/${params.id}`)
 
 
