@@ -1,9 +1,13 @@
 import React from 'react';
-import Swal from 'sweetalert2'
+import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
-const AddToy = () => {
+const UpdateToy = () => {
 
-    const handleAddToy = event => {
+    const toy = useLoaderData();
+    const { _id, seller_name, toy_name, section, price, available_quantity, detail_description, img_url, rating, seller_email } = toy
+
+    const handleUpdateToy = event => {
         event.preventDefault();
 
         const form = event.target;
@@ -18,24 +22,24 @@ const AddToy = () => {
         const section = form.section.value;
         const detail_description = form.detail_description.value;
 
-        const newToy = { toy_name, seller_name, seller_email, price, rating, available_quantity, img_url, section, detail_description };
-        console.log(newToy)
+        const updatedToy = { toy_name, seller_name, seller_email, price, rating, available_quantity, img_url, section, detail_description };
+        console.log(updatedToy)
 
 
-        fetch('http://localhost:5000/addToy', {
-            method: 'POST',
+        fetch(`http://localhost:5000/allToy/${_id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(newToy)
+            body: JSON.stringify(updatedToy)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if (data.insertedId) {
+                if (data.modifiedCount) {
                     Swal.fire({
                         title: 'Success',
-                        text: 'Add A Toy Successfully',
+                        text: 'Updated Toy Successfully',
                         icon: 'success',
                         confirmButtonText: 'Done'
                     })
@@ -45,8 +49,8 @@ const AddToy = () => {
 
     return (
         <div>
-            <form onSubmit={handleAddToy} className='mt-10 mb-36 bg-blue-200 max-w-7xl mx-auto py-20 rounded-lg'>
-                <h1 className='text-4xl font-bold text-center mb-14'>ADD A TOY</h1>
+            <form onSubmit={handleUpdateToy} className='mt-10 mb-36 bg-blue-200 max-w-7xl mx-auto py-20 rounded-lg'>
+                <h1 className='text-4xl font-bold text-center mb-14'>Update Toy: {toy_name}</h1>
                 <div className='flex max-w-3xl mx-auto space-x-20'>
 
                     <div>
@@ -55,7 +59,7 @@ const AddToy = () => {
                                 <span className="label-text text-lg font-semibold">Toy Name</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name='toy_name' placeholder="Toy Name" className=" border-2 border-blue-300 p-3" />
+                                <input type="text" name='toy_name' defaultValue={toy_name} placeholder="Toy Name" className=" border-2 border-blue-300 p-3" />
                             </label>
                         </div>
 
@@ -64,7 +68,7 @@ const AddToy = () => {
                                 <span className="label-text text-lg font-semibold">Seller Name</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name='seller_name' placeholder="Seller Name" className=" border-2 border-blue-300 p-3" />
+                                <input type="text" name='seller_name' defaultValue={seller_name} placeholder="Seller Name" className=" border-2 border-blue-300 p-3" />
                             </label>
                         </div>
                     </div>
@@ -78,7 +82,7 @@ const AddToy = () => {
                             </label>
                             <label className="input-group">
                                 <span>Email</span>
-                                <input type="text" name='seller_email' className=" border-2 border-blue-300 p-3" />
+                                <input type="text" name='seller_email'  defaultValue={seller_email} className=" border-2 border-blue-300 p-3" />
                             </label>
                         </div>
 
@@ -87,7 +91,7 @@ const AddToy = () => {
                                 <span className="label-text text-lg font-semibold">Price</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name='price' placeholder='Price' className=" border-2 border-blue-300 p-3" />
+                                <input type="text" name='price'  defaultValue={price} placeholder='Price' className=" border-2 border-blue-300 p-3" />
                             </label>
                         </div>
                     </div>
@@ -101,7 +105,7 @@ const AddToy = () => {
                                 <span className="label-text text-lg font-semibold">Rating</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name='rating' placeholder='Rating' className=" border-2 border-blue-300 p-3" />
+                                <input type="text" name='rating' defaultValue={rating} placeholder='Rating' className=" border-2 border-blue-300 p-3" />
                             </label>
                         </div>
 
@@ -111,7 +115,7 @@ const AddToy = () => {
                                 <span className="label-text text-lg font-semibold">Quantity</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name='available_quantity' placeholder='Quantity' className=" border-2 border-blue-300 p-3" />
+                                <input type="text" name='available_quantity' defaultValue={available_quantity} placeholder='Quantity' className=" border-2 border-blue-300 p-3" />
                             </label>
                         </div>
                     </div>
@@ -126,7 +130,7 @@ const AddToy = () => {
                             <span className="label-text text-lg font-semibold">Toy Img URL</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name='img_url' placeholder='Img URL' className=" border-2 border-blue-300 p-3" />
+                            <input type="text" name='img_url' defaultValue={img_url} placeholder='Img URL' className=" border-2 border-blue-300 p-3" />
                         </label>
                     </div>
 
@@ -136,7 +140,7 @@ const AddToy = () => {
                             <span className="label-text text-lg font-semibold">Detail Description</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name='detail_description' placeholder='detail_description' className=" border-2 border-blue-300 p-3" />
+                            <input type="text" name='detail_description' defaultValue={detail_description} placeholder='detail_description' className=" border-2 border-blue-300 p-3" />
                         </label>
                     </div>
 
@@ -146,17 +150,17 @@ const AddToy = () => {
                             <span className="label-text text-lg font-semibold">Sub Category</span>
                         </label>
                         <label className="input-group ml-16">
-                            <input type="text" name='section' placeholder='Sub Category' className=" border-2 border-blue-300 p-3" />
+                            <input type="text" name='section' defaultValue={section} placeholder='Sub Category' className=" border-2 border-blue-300 p-3" />
                         </label>
                     </div>
 
                 </div>
                 <div className='text-center mt-10'>
-                    <input className="btn btn-outline btn-wide" type="submit" value="Add Toy" />
+                    <input className="btn btn-outline btn-wide" type="submit" value="Update Toy" />
                 </div>
             </form>
         </div>
     );
 };
 
-export default AddToy;
+export default UpdateToy;

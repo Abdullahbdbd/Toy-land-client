@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
@@ -54,7 +55,7 @@ const MyToy = ({ toy }) => {
 
 
             <th>
-                <button className="btn btn-outline">Update</button>
+               <Link to={`/updateToy/${_id}`}><button className="btn btn-outline">Update</button></Link>
 
             </th>
             <th>

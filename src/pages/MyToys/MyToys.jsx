@@ -37,7 +37,7 @@ const MyToys = () => {
                             ></MyToy>)
                         }
                     </tbody>
-                       
+
                 </table>
             </div>
         </div>
