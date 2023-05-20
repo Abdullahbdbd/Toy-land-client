@@ -8,6 +8,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import AllToy from "../pages/AllToy/AllToy/AllToy";
 import Details from "../Shared/Details/Details";
 import PrivateRoute from "../provider/PrivateRoute";
+import AddToy from "../pages/AddToy/AddToy";
 
 const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
                 loader: ({params})=> fetch(`http://localhost:5000/allToy/${params.id}`)
 
 
+            },
+            {
+                path: '/addToy',
+                element: <AddToy></AddToy>
             }
         ]
     },

@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from '../../provider/AuthProvider';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import Swal from 'sweetalert2'
 
 const Login = () => {
 
@@ -21,6 +22,14 @@ const Login = () => {
         .then(result =>{
             const user = result.user;
             console.log(user)
+            if(user){
+                Swal.fire({
+                    title: 'Success',
+                    text: 'Login Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Done'
+                  })
+            }
             navigate(from, {replace: true})
         })
         .catch(error => console.log(error))
