@@ -48,7 +48,7 @@ const Categoric = () => {
 
             </div>
 
-            <div className='grid grid-cols-2 gap-5 max-w-7xl mx-auto'>
+            <div className='lg:grid grid-cols-2 gap-5 max-w-7xl mx-auto px-5 lg:px-0 space-y-5 lg:space-y-0'>
                 {
                     toys.map(toy => <ScienceToy
                         key={toy._id}

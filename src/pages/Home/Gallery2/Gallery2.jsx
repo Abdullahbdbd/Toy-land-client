@@ -9,9 +9,9 @@ const Gallery2 = () => {
            </div>
 
             <div className='space-y-5'>
-                <div className='flex max-w-7xl mx-auto space-x-5'>
+                <div className='lg:flex max-w-7xl mx-auto space-x-5 space-y-5'>
 
-                    <div className="card w-96 bg-base-100 shadow-xl">
+                    <div className="card w-96 bg-base-100 shadow-xl ml-5">
                         <figure><img className='h-80' src="https://cdn.shopify.com/s/files/1/0403/6755/4718/products/94062_BN_VR-ScienceKit_Render_FrontLeft_Shadow_3000px_210930_1_1024x1024.png?v=1664526995" alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">
@@ -55,9 +55,9 @@ const Gallery2 = () => {
 
                 </div>
 
-                <div className='flex max-w-7xl mx-auto space-x-5'>
+                <div className='lg:flex max-w-7xl mx-auto space-x-5 space-y-5'>
 
-                    <div className="card w-96 bg-base-100 shadow-xl">
+                    <div className="card w-96 bg-base-100 shadow-xl ml-5">
                         <figure><img className='h-80' src="https://www.lego.com/cdn/cs/set/assets/blt2d9fb32f00ef8f66/42144_alt1.png" alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">

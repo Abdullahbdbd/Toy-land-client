@@ -2,10 +2,10 @@ import React from 'react';
 
 const Age = () => {
     return (
-        <div>
+        <div className='mt-auto'>
             <h1 className='mt-10 mb-20 text-5xl font-bold text-center text-sky-700'>Shop By Age</h1>
-            <div className='flex justify-around mx-20 space-x-4'>
-            <div className="card w-72 bg-blue-300 shadow-xl">
+            <div className='lg:flex justify-around mx-20 space-x-4 space-y-5'>
+            <div className="card w-72 bg-blue-300 shadow-xl ml-4">
                 <figure className="px-5 pt-5">
                     <img src="https://media.istockphoto.com/id/1455750836/photo/daycare-children-playing.jpg?b=1&s=170667a&w=0&k=20&c=0elwGnoqH2hZKMRpBaW00f7QpilDquD9QHhL1fBLKQc=" alt="Shoes" className="rounded-xl" />
                 </figure>
