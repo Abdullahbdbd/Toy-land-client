@@ -18,6 +18,7 @@ const Navbar = () => {
         <li><Link className='text-xl font-semibold' to="/allToy">All Toys</Link></li>
         <li><Link className='text-xl font-semibold' to="/blog">Blog</Link></li>
         <li><Link className='text-xl font-semibold' to="/addToy">Add A Toy</Link></li>
+        <li><Link className='text-xl font-semibold' to="/myToys">My Toy</Link></li>
     </>
     return (
         <div className="navbar bg-blue-500 h-24">

@@ -16,30 +16,31 @@ const AddToy = () => {
         const available_quantity = form.available_quantity.value;
         const img_url = form.img_url.value;
         const section = form.section.value;
+        const detail_description = form.detail_description.value;
 
-        const newToy = { toy_name, seller_name, seller_email, price, rating, available_quantity, img_url, section };
+        const newToy = { toy_name, seller_name, seller_email, price, rating, available_quantity, img_url, section, detail_description };
         console.log(newToy)
 
 
-        fetch('http://localhost:5000/addToy',{
+        fetch('http://localhost:5000/addToy', {
             method: 'POST',
-            headers:{
-                'content-type':'application/json'
+            headers: {
+                'content-type': 'application/json'
             },
             body: JSON.stringify(newToy)
         })
-        .then(res=> res.json())
-        .then(data=>{
-            console.log(data)
-            if(data.insertedId){
-                Swal.fire({
-                    title: 'Success',
-                    text: 'Add A Toy Successfully',
-                    icon: 'success',
-                    confirmButtonText: 'Done'
-                  })
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success',
+                        text: 'Add A Toy Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Done'
+                    })
+                }
+            })
     }
 
     return (
@@ -125,20 +126,29 @@ const AddToy = () => {
                             <span className="label-text text-lg font-semibold">Toy Img URL</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name='img_url' placeholder='Img URL' className=" border-2 border-blue-300 p-3 pr-96" />
+                            <input type="text" name='img_url' placeholder='Img URL' className=" border-2 border-blue-300 p-3" />
                         </label>
                     </div>
+
 
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text text-lg font-semibold">Sub Category</span>
+                            <span className="label-text text-lg font-semibold">Detail Description</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name='section' placeholder='Sub Category' className=" border-2 border-blue-300 p-3" />
+                            <input type="text" name='detail_description' placeholder='detail_description' className=" border-2 border-blue-300 p-3" />
                         </label>
                     </div>
 
 
+                    <div className="form-control">
+                        <label className="label ml-16">
+                            <span className="label-text text-lg font-semibold">Sub Category</span>
+                        </label>
+                        <label className="input-group ml-16">
+                            <input type="text" name='section' placeholder='Sub Category' className=" border-2 border-blue-300 p-3" />
+                        </label>
+                    </div>
 
                 </div>
                 <div className='text-center mt-10'>

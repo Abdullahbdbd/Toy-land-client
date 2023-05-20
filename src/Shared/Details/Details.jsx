@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 const Details = () => {
     const data = useLoaderData();
     const { toy_name, seller_name, section, price, available_quantity, img_url
-        , seller_email, rating} = data;
+        , seller_email, rating, detail_description} = data;
     return (
         <div>
             <div className="card max-w-7xl mx-auto my-10 bg-blue-50">
@@ -17,6 +17,7 @@ const Details = () => {
                     <p>Section: {section}</p>
                     <p>Seller Email: {seller_email}</p>
                     <p>Rating: {rating}</p>
+                    <p>Detail Description: {detail_description}</p>
                 </div>
             </div>
         </div>
