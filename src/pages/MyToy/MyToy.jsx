@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 
 const MyToy = ({ toy }) => {
 
-    const { _id, price, available_quantity, detail_description } = toy;
+    const { _id, seller_name, toy_name, section, price, available_quantity, detail_description } = toy;
 
     const handleDelete = _id => {
         console.log(_id)
@@ -41,6 +41,15 @@ const MyToy = ({ toy }) => {
     }
     return (
         <tr>
+            <td>
+                <p>{seller_name}</p>
+            </td>
+            <td>
+                <p>{toy_name}</p>
+            </td>
+            <td>
+                <p>{section}</p>
+            </td>
             <td>
                 <p>${price}</p>
             </td>

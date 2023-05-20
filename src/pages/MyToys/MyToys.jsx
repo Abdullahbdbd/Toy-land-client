@@ -22,6 +22,9 @@ const MyToys = () => {
                     {/* head */}
                     <thead>
                         <tr>
+                            <th>Seller</th>
+                            <th>Toy Name</th>
+                            <th>Sub-category</th>
                             <th>Price</th>
                             <th>Available Quantity</th>
                             <th>Details</th>
