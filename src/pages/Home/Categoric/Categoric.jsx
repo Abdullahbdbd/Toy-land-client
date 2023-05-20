@@ -28,21 +28,21 @@ const Categoric = () => {
             <div className='space-x-10 mb-20'>
                 <div
                     onClick={() => handleTabClick("science")}
-                    className={`tab tab2 science text-3xl font-semibold ${activeTab == "science" ? "text-blue-500 btn btn-outline" : ""
+                    className={`tab tab2 science text-3xl font-semibold ${activeTab == "science" ? "text-white btn" : ""
                         }`}
                 >Science kits</div>
 
 
                 <div
                     onClick={() => handleTabClick("math learning")}
-                    className={`tab tab2 math learning text-3xl font-semibold ${activeTab == "math learning" ? "text-blue-500 btn btn-outline" : ""
+                    className={`tab tab2 math learning text-3xl font-semibold ${activeTab == "math learning" ? "text-white btn" : ""
                         }`}
                 >Math learning toys</div>
 
 
                 <div
                     onClick={() => handleTabClick("engineering")}
-                    className={`tab tab2 engineering text-3xl font-semibold ${activeTab == "engineering" ? "text-blue-500 btn btn-outline" : ""
+                    className={`tab tab2 engineering text-3xl font-semibold ${activeTab == "engineering" ? "text-white btn" : ""
                         }`}
                 >Engineering tools</div>
 
