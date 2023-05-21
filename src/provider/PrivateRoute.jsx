@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from './AuthProvider';
 import { Navigate, useLocation } from 'react-router';
+// import Swal from 'sweetalert2'
 
 const PrivateRoute = ({ children }) => {
 
@@ -10,6 +11,12 @@ const PrivateRoute = ({ children }) => {
      if(loading){
         return <progress className="progress w-56"></progress>
      }
+    //  Swal.fire({
+    //     title: 'Success',
+    //     text: 'Add A Toy Successfully',
+    //     icon: 'success',
+    //     confirmButtonText: 'Done'
+    // })
 
     if (user) {
         return children;

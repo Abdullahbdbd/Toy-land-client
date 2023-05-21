@@ -3,8 +3,9 @@ import React from 'react';
 const TopToy = () => {
     return (
         <div className='mb-40'>
-            <h1 className='mt-52 mb-20 text-5xl font-bold text-center text-sky-700'>Top Toy Categories</h1>
+            <h1 className='mt-52 mb-10 text-5xl font-bold text-center text-sky-700'>Top Toy Categories</h1>
             <div>
+            <p className='mb-20 text-center'>ipsum dolor sit, amet consectetur adipisicing elit. Dolorum libero error omnis nihil nulla velit, <br /> cum sequi. Adipisci blanditiis repellendus placeat, culpa voluptas</p>
 
                 <div className='lg:flex justify-around mx-20 space-x-4 space-y-5 lg:space-y-0'>
                     <div data-aos="flip-left"

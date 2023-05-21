@@ -3,7 +3,8 @@ import React from 'react';
 const Age = () => {
     return (
         <div className='mt-auto'>
-            <h1 className='mt-10 mb-20 text-5xl font-bold text-center text-sky-700'>Shop By Age</h1>
+            <h1 className='my-10 text-5xl font-bold text-center text-sky-700'>Shop By Age</h1>
+            <p className='mb-10 text-center'>ipsum dolor sit, amet consectetur adipisicing elit. Dolorum libero error omnis nihil nulla velit, <br /> cum sequi. Adipisci blanditiis repellendus placeat, culpa voluptas</p>
             <div className='lg:flex justify-around mx-20 space-x-4 space-y-5'>
             <div data-aos="zoom-in-down" className="card w-72 bg-blue-300 shadow-xl ml-4 lg:ml-0">
                 <figure className="px-5 pt-5">

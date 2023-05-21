@@ -6,20 +6,32 @@ const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
 
-    const handleLogOut = ()=>{
+    const handleLogOut = () => {
         logOut()
-        .then(()=>{})
-        .catch(error => console.log(error))
+            .then(() => { })
+            .catch(error => console.log(error))
     }
-    
 
-    const navItems = <>
+
+    const navItems = <div className='lg:flex space-x-5'>
         <li><Link className='text-xl font-semibold' to="/">Home</Link></li>
         <li><Link className='text-xl font-semibold' to="/allToy">All Toys</Link></li>
         <li><Link className='text-xl font-semibold' to="/blog">Blog</Link></li>
-        <li><Link className='text-xl font-semibold' to="/addToy">Add A Toy</Link></li>
-        <li><Link className='text-xl font-semibold' to="/myToys">My Toy</Link></li>
-    </>
+
+
+
+        {user?.email ?
+            <div className='lg:flex space-x-4'>
+                <li><Link className='text-xl font-semibold' to="/addToy">Add A Toy</Link></li>
+                <li><Link className='text-xl font-semibold' to="/myToys">My Toy</Link></li>
+                <button className="btn btn-outline font-bold" onClick={handleLogOut}>Log Out</button>
+
+            </div>
+
+            : <Link to='/login'><button className="btn btn-outline font-bold">Log in</button></Link>
+        }
+
+    </div>
     return (
         <div className="navbar bg-blue-500 h-24">
             <div className="navbar-start">
@@ -41,11 +53,7 @@ const Navbar = () => {
                     {navItems}
                 </ul>
             </div>
-            <div className="navbar-end mr-5">
-                {user?.email?<button className="btn btn-outline font-bold" onClick={handleLogOut}>Log Out</button>:
-                <Link to='/login'><button className="btn btn-outline font-bold">Log in</button></Link>
-                }
-            </div>
+
         </div>
     );
 };
