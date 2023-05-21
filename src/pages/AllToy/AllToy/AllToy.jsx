@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Toy from '../Toy/Toy';
+import {Helmet} from "react-helmet";
 
 const AllToy = () => {
     const [allToys, setAllToy] = useState([]);
@@ -20,6 +21,9 @@ const AllToy = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Toy Land | All Toy</title>
+            </Helmet>
               <div className='text-center my-10'>
                 <input
                 onChange={(e) => setSearchToy(e.target.value)}

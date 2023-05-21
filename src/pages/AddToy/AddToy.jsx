@@ -1,5 +1,6 @@
 import React from 'react';
 import Swal from 'sweetalert2'
+import {Helmet} from "react-helmet";
 
 const AddToy = () => {
 
@@ -45,6 +46,9 @@ const AddToy = () => {
 
     return (
         <div>
+             <Helmet>
+                <title>Toy Land | Add Toy</title>
+            </Helmet>
             <form onSubmit={handleAddToy} className='mt-10 mb-36 bg-blue-200 max-w-7xl mx-auto py-20 rounded-lg'>
                 <h1 className='text-4xl font-bold text-center mb-14'>ADD A TOY</h1>
                 <div className='flex max-w-3xl mx-auto space-x-20'>

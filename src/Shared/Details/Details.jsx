@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import {Helmet} from "react-helmet";
 
 const Details = () => {
     const data = useLoaderData();
@@ -7,6 +8,9 @@ const Details = () => {
         , seller_email, rating, detail_description} = data;
     return (
         <div>
+             <Helmet>
+                <title>Toy Land | Details</title>
+            </Helmet>
             <div className="card max-w-7xl mx-auto my-10 bg-blue-50">
                 <figure><img className='h-96' src={img_url} alt="car!" /></figure>
                 <div className="card-body">

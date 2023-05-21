@@ -1,8 +1,15 @@
 
 import React from 'react';
+import {Helmet} from "react-helmet";
 
 const Blog = () => {
     return (
+    <div>
+        <Helmet>
+                <title>Toy Land | Blog</title>
+            </Helmet>
+
+
         <div className='max-w-7xl mx-auto'>
             <div className='mt-20'>
                 <h1 className='text-4xl font-bold'>1.. What is an access token and refresh token? How do they work and where should we store them on the client-side?</h1>
@@ -168,6 +175,8 @@ const Blog = () => {
                 <p className='text-xl font-medium mt-5 mb-20'>The aggregate function in MongoDB provides a powerful and flexible way to perform data aggregation and analysis within the database. It is particularly useful for complex computations and transformations that are better performed at the database level rather than retrieving and processing large amounts of data in the client application.</p>
             </div>
         </div>
+    </div>
+        
     );
 };
 

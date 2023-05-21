@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
 import { AuthContext } from '../../provider/AuthProvider';
+import {Helmet} from "react-helmet";
 
 const SignUp = () => {
 
@@ -25,6 +26,11 @@ const SignUp = () => {
     }
 
     return (
+        <div>
+            <Helmet>
+                <title>Toy Land | Sign Up</title>
+            </Helmet>
+
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse space-x-20">
                 <div className="text-center lg:text-left">
@@ -71,6 +77,7 @@ const SignUp = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 };

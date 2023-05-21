@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import {Helmet} from "react-helmet";
 
 const UpdateToy = () => {
 
@@ -49,6 +50,9 @@ const UpdateToy = () => {
 
     return (
         <div>
+             <Helmet>
+                <title>Toy Land | Update Toy</title>
+            </Helmet>
             <form onSubmit={handleUpdateToy} className='mt-10 mb-36 bg-blue-200 max-w-7xl mx-auto py-20 rounded-lg'>
                 <h1 className='text-4xl font-bold text-center mb-14'>Update Toy: {toy_name}</h1>
                 <div className='flex max-w-3xl mx-auto space-x-20'>

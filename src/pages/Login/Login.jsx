@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from '../../provider/AuthProvider';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Swal from 'sweetalert2'
+import {Helmet} from "react-helmet";
 
 const Login = () => {
 
@@ -36,6 +37,11 @@ const Login = () => {
     }
 
     return (
+        <div>
+            <Helmet>
+                <title>Toy Land | Login</title>
+            </Helmet>
+
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse space-x-20">
                 <div className="text-center lg:text-left">
@@ -69,6 +75,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 };
