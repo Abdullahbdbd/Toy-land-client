@@ -27,7 +27,7 @@ const UpdateToy = () => {
         console.log(updatedToy)
 
 
-        fetch(`http://localhost:5000/allToy/${_id}`, {
+        fetch(`https://toy-land-server-nine.vercel.app/allToy/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -20,7 +20,7 @@ const MyToy = ({ toy, reload, setReload }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/allToy/${_id}`, {
+                fetch(`https://toy-land-server-nine.vercel.app/allToy/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

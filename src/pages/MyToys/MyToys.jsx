@@ -8,7 +8,7 @@ const MyToys = () => {
   const [reload, setReload]= useState(true);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myToys/${user?.email}`)
+        fetch(`https://toy-land-server-nine.vercel.app/myToys/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setToys(data)

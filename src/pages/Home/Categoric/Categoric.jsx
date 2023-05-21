@@ -8,7 +8,7 @@ const Categoric = () => {
     const [activeTab, setActiveTab] = useState("science");
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allToys/${activeTab}`)
+        fetch(`https://toy-land-server-nine.vercel.app/allToys/${activeTab}`)
             .then(res => res.json())
             .then(result => {
                 setToys(result);
