@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
-const MyToy = ({ toy }) => {
+const MyToy = ({ toy, reload, setReload }) => {
 
     const { _id, seller_name, toy_name, section, price, available_quantity, detail_description } = toy;
 
@@ -20,18 +20,19 @@ const MyToy = ({ toy }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/allToy/${_id}`,{
+                fetch(`http://localhost:5000/allToy/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
                     .then(data => {
                         console.log(data)
+                        setReload(!reload)
                         if (data.deletedCount > 0) {
-                                Swal.fire(
-                                    'Deleted!',
-                            'Your Toy has been deleted.',
-                                    'success'
-                                )
+                            Swal.fire(
+                                'Deleted!',
+                                'Your Toy has been deleted.',
+                                'success'
+                            )
                         }
                     })
 
@@ -64,7 +65,7 @@ const MyToy = ({ toy }) => {
 
 
             <th>
-               <Link to={`/updateToy/${_id}`}><button className="btn btn-outline">Update</button></Link>
+                <Link to={`/updateToy/${_id}`}><button className="btn btn-outline">Update</button></Link>
 
             </th>
             <th>

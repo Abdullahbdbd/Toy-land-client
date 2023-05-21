@@ -4,7 +4,9 @@ const TopToy = () => {
     return (
         <div className='mb-40'>
             <h1 className='mt-52 mb-20 text-5xl font-bold text-center text-sky-700'>Top Toy Categories</h1>
-            <div>
+            <div data-aos="flip-left"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000">
 
                 <div className='lg:flex justify-around mx-20 space-x-4 space-y-5 lg:space-y-0'>
                     <img className='ml-4' src="https://www.thetoyshop.com/medias/TE-Categories-300x356-Dolls.jpg?context=bWFzdGVyfHJvb3R8OTgxNDR8aW1hZ2UvanBlZ3xoZjMvaGI4LzEyMDUxODczMTAzOTAyLmpwZ3xjNjA4ODc1MTc4YTkwYTJjYjRmM2MwMmE4YTA4NzYyYjVlYzk4OWYxNzk3YTAzYWNmYzZiOTJhMjljZThiOTVh" alt="" />

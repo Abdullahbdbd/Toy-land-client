@@ -5,7 +5,7 @@ import MyToy from '../MyToy/MyToy';
 const MyToys = () => {
     const { user } = useContext(AuthContext);
     const [toys, setToys] = useState([]);
-
+  const [reload, setReload]= useState(true);
 
     useEffect(() => {
         fetch(`http://localhost:5000/myToys/${user?.email}`)
@@ -13,7 +13,7 @@ const MyToys = () => {
             .then(data => {
                 setToys(data)
             })
-    }, [user])
+    }, [user, reload])
 
     return (
         <div>
@@ -37,6 +37,8 @@ const MyToys = () => {
                             toys.map(toy => <MyToy
                                 key={toy._id}
                                 toy={toy}
+                                reload={reload}
+                                setReload={setReload}
                             ></MyToy>)
                         }
                     </tbody>
